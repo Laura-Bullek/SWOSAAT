@@ -14,4 +14,4 @@ const User = require("./user");
 //   foreignKey: "user_id",
 // });
 
-module.exports = { User };
+module.exports = User;

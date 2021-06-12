@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Project, User } = require("../models");
+const { User } = require("../models").default;
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
