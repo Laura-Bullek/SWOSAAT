@@ -1,8 +1,13 @@
 const User = require('./user');
-const Subscriptions = require('./subscription');
+const Subscription = require('./subscription');
 
-User.hasMany(Subscriptions, {
+User.hasMany(Subscription, {
     foreignKey: 'user_id',
-})
+    onDelete: 'CASCADE'
+});
 
-module.exports = { User, Subscriptions};
+Subscription.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+module.exports = { User, Subscription};
