@@ -11,6 +11,19 @@ Subscription.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    serviceName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    type_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    input_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
@@ -28,6 +41,13 @@ Subscription.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {

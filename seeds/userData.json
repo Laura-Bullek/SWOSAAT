@@ -1,19 +1,5 @@
 [
   {
-<<<<<<< HEAD
-    "name": "Jack",
-    "email": "jack@hotmail.com",
-    "password": "password12345"
-  },
-  {
-    "name": "Marcus",
-    "email": "marcus@gmail.com",
-    "password": "password12345"
-  },
-  {
-    "name": "Jennifer",
-    "email": "jennifer@aol.com",
-=======
     "name": "Sal",
     "email": "sal@hotmail.com",
     "password": "password12345"
@@ -26,7 +12,6 @@
   {
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
->>>>>>> a4e9cbd9d433ab785a9c1338d96a3ce349beb35f
     "password": "password12345"
   }
 ]

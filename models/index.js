@@ -1,17 +1,13 @@
 const User = require("./user");
-// const Project = require("./Project");
+const Subscription = require("./subscription");
 
-// User.hasMany(Project, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
+User.hasMany(Subscription, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
-// Comment.belongsTo(User, {
-//   foreignKey: "user_id",
-// });
+Subscription.belongsTo(User, {
+  foreignKey: "user_id",
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: "user_id",
-// });
-
-module.exports = User;
+module.exports = { User, Subscription };
