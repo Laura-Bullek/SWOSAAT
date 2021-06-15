@@ -11,7 +11,7 @@ Subscription.init (
             primaryKey: true,
             autoIncrement: true,
         },
-        serviceName: {
+        service_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -36,6 +36,7 @@ Subscription.init (
         trial: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
         trial_duration: {
             type: DataTypes.INTEGER,
