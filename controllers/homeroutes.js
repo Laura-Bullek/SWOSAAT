@@ -49,6 +49,10 @@ router.get("/project/:id", async (req, res) => {
   }
 });
 
+router.get("/calender", async (req, res) => {
+  res.render("calender");
+});
+
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
