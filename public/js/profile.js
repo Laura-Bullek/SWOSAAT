@@ -1,3 +1,14 @@
+const showTrialPeriod = async () => {
+  let checkBox = document.querySelector('#trialCheck');
+  let trialPeriod = document.querySelector('#trial-dur');
+
+  if (checkBox.checked === true) {
+    trialPeriod.style.display = 'block';
+  } else {
+    trialPeriod.style.display = 'none';
+  }
+}
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 

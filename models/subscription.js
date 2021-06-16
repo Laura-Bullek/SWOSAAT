@@ -15,10 +15,6 @@ Subscription.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
-        type_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         input_date: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -40,8 +36,7 @@ Subscription.init (
         },
         trial_duration: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
+            defaultValue: null,
         },
         user_id: {
             type: DataTypes.INTEGER,
