@@ -1,0 +1,33 @@
+[
+    {
+        "service_name": "Amazon Prime",
+        "price": 13,
+        "pay_interval": 30,
+        "trial": false
+    },
+    {
+        "service_name": "Twitch",
+        "price": 3,
+        "pay_interval": 30,
+        "trial": false
+    },
+    {
+        "service_name": "hulu",
+        "price": 6,
+        "pay_interval": 30,
+        "trial": true,
+        "trial_duration": 42
+    },
+    {
+        "service_name": "Netflix",
+        "price": 14,
+        "pay_interval": 30,
+        "trial": false
+    },
+    {
+        "service_name": "Disney Plus",
+        "price": 8,
+        "pay_interval": 30,
+        "trial": false
+    }
+]

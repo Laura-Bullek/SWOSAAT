@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Add a new Subscription:</h3>
+
+    <form class="form new-sub-form">
+      <div class="form-group">
+        <label for="sub-name">Subscription name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="sup-price">Subscription price:</label>
+        <input class="form-input" type="number" id="sub_price" name="sub_price" />
+      </div>
+      <div class="form-group">
+        <label for="pay-interval">Payment interval:</label>
+        <input class="form-input" type="number" id="pay-interval" name="pay-interval"/>
+      </div>
+      <div class="form-group">
+        <label for="trial">is this a trial?</label>
+        <input class="form-input col-md-1" type="checkbox" id="trialCheck" onclick="showTrialPeriod()"/>
+      </div>
+      <div class="form-group" id="trial-dur" style="display:none">
+        <label for="trial">Trial end date:</label>
+        <input class="form-input" type="date" onclick="showTrialPeriod()"/>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
