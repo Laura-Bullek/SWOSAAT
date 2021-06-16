@@ -10,4 +10,4 @@ Subscription.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-module.exports = { User, Subscription};
+module.exports = { User, Subscription };
