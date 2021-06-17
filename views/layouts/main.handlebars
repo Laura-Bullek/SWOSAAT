@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subcription Managert</title>
+    <title>Subcription Manager</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css" rel="stylesheet" />
     <link href="fullcalendar/main.css" rel="stylesheet" />
     <script src="fullcalendar/main.js"></script>
-    <script src="./public/js/calender.js" defer></script>
+    <script src="./public/js/calendar.js" defer></script>
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -20,29 +20,23 @@
 <body>
     <div class="flex-column justify-space-around">
         <header>
-            <h1>
-                <a href="/">Subcription Managert</a>
+            <h1 class="col-auto header-tags">
+                <a href="/" style="color: #9a662e; text-decoration: none;">Subcription Manager</a>
             </h1>
-            <nav>
-                <!-- Conditionally render login or logout links -->
+            <nav class="nav-bar">
                 {{#if logged_in}}
-                <a href="/profile">profile</a> |
-                <button class="no-button" id="logout">logout</button>
+                <a style="color: #9a662e; text-decoration: none;" href="/profile">Profile</a> |
+                <button class="no-button" id="logout">Logout</button>
                 {{else}}
-                <a href="/login">login</a>
+                <a href="/login">Login</a>
                 {{/if}}
             </nav>
         </header>
         <main class="container container-fluid mt-5">
-            <!-- Render the sub layout -->
             {{{ body }}}
         </main>
-        <footer>
-
-        </footer>
     </div>
 
-    <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
 
