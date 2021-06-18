@@ -11,24 +11,23 @@
     <form class="form new-sub-form">
       <div class="form-group">
         <label for="sub-name">Subscription name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <input class="form-input" type="text" id="sub-name" name="sub-name" />
       </div>
       <div class="form-group">
-        <label for="sup-price">Subscription price:</label>
-        <input class="form-input" type="number" id="sub_price" name="sub_price" />
-      </div>
-      
-      <div class="form-group">
-        <label for="pay-interval">Payment interval:</label>
-        <input class="form-input" type="number" id="pay-interval" name="pay-interval"/>
+        <label for="sup-price">Subscription price ($):</label>
+        <input class="form-input" type="number" id="sub-price" name="sub-price" />
       </div>
       <div class="form-group">
-        <label for="trial">is this a trial?</label>
-        <input class="form-input col-md-1" type="checkbox" id="trialCheck" onclick="showTrialPeriod()"/>
+        <label for="pay-date">Payment date:</label>
+        <input class="form-input" type="date" id="pay-date" name="pay-date"/>
       </div>
-      <div class="form-group" id="trial-dur" style="display:none">
-        <label for="trial">Trial end date:</label>
-        <input class="form-input" type="date" onclick="showTrialPeriod()"/>
+      <div class="form-group">
+        <label for="trial-check">is this a trial?</label>
+        <input class="form-input col-md-1" type="checkbox" id="trial-check" onclick="showTrialPeriod()"/>
+      </div>
+      <div class="form-group" id="trial-period-div" style="display:none">
+        <label for="trial-period">Trial duration:</label>
+        <input class="form-input" type="number" onclick="showTrialPeriod()" id="trial-period"/>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary add">Add</button>
