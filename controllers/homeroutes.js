@@ -89,4 +89,34 @@ router.get("/events", (req, res) => {
   });
 });
 
+router.get("/prices", (req, res) => {
+  // Use subscription model to get data from database
+
+  // This requires a json made from the subscription model that fetches the name and price of each one
+  return res.json({
+    data: [
+      {
+        label: 'subscription 1',
+        price: 15
+      },
+      {
+        label: 'subscription 2',
+        price: 25
+      },
+      {
+        label: 'subscription 3',
+        price: 20
+      },
+      {
+        label: 'subscription 4',
+        price: 10
+      },
+      {
+        label: 'subscription 5',
+        price: 5
+      },
+    ],
+  });
+});
+
 module.exports = router;
