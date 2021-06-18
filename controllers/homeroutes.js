@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Subscription } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -53,9 +53,9 @@ router.get("/project/:id", async (req, res) => {
   }
 });
 
-router.get("/calender", async (req, res) => {
-  res.render("calender");
-});
+// router.get("/calender", async (req, res) => {
+//   res.render("calender");
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
@@ -63,7 +63,7 @@ router.get("/profile", withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      // include: [{ model: Project }],
+      // include: [{ model: Subscription }],
     });
 
     const user = userData.get({ plain: true });

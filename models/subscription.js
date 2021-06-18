@@ -25,8 +25,8 @@ Subscription.init (
             allowNull: false,
         },
         //counted in days?
-        pay_interval: {
-            type: DataTypes.INTEGER,
+        pay_date: {
+            type: DataTypes.DATE,
             allowNull: false,
         },
         trial: {
