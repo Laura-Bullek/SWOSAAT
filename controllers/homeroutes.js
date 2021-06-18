@@ -39,32 +39,12 @@ router.get("/calendar", async (req, res) => {
   res.render("calendar");
 });
 
-router.post("/subscription/:id", async (req, res) => {
-  try {
-    const addEvent = await User.findone({
-      where: {
-        service_name: req.body.service_name,
-        price: req.body.price,
-        input_date: req.body.input_date,
-      },
-    });
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.json({ user: userData, message: "You are now logged in!" });
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
+
     });
     const user = userData.get({ plain: true });
     res.render("profile", {
