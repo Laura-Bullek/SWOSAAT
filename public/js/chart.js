@@ -28,7 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var myChart = new Chart(context, {
             type: 'doughnut',
-            data: ourDatabase
+            data: ourDatabase,
+            options: {
+                plugins: {
+                    datalabels: {
+                        display: true,
+                        formatter: (val, context) => {
+                            return context.chart.data.labels[context.dataIndex];
+                        }
+                    }
+                }
+            }
         });
     });
 });
