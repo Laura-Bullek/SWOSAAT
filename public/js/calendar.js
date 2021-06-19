@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar");
-  var addEvent = document.getElementById(".add");
 
   fetch("/events", {
     method: "GET",

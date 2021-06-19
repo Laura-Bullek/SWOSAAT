@@ -44,7 +44,6 @@ router.get("/profile", withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-
     });
     const user = userData.get({ plain: true });
     res.render("profile", {
@@ -65,48 +64,48 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// router.get("/events", (req, res) => {
-//   // Use subscription model to get data from database
+router.get("/events", (req, res) => {
+  // Use subscription model to get data from database
 
-//   // give data back as response so calanedar.js can fill up the events
-//   return res.json({
-//     events: [
-//       {
-//         title: "event1",
-//         start: "2021-06-21",
-//       },
-//       {
-//         title: "event2",
-//         start: "2021-06-05",
-//         end: "2021-06-20",
-//       },
-//       {
-//         title: "event3",
-//         start: "2021-06-23T12:30:00",
-//         allDay: false, // will make the time show
-//       },
-//     ],
-//   });
-// });
+  // give data back as response so calanedar.js can fill up the events
+  return res.json({
+    events: [
+      {
+        title: "event1",
+        start: "2021-06-21",
+      },
+      {
+        title: "event2",
+        start: "2021-06-05",
+        end: "2021-06-20",
+      },
+      {
+        title: "event3",
+        start: "2021-06-23T12:30:00",
+        allDay: false, // will make the time show
+      },
+    ],
+  });
+});
 
 router.get("/prices", async (req, res) => {
   // Use subscription model to get data from database
   const subscriptions = await Subscription.findAll({
     where: {
-      user_id:req.session.user_id
-    }
+      user_id: req.session.user_id,
+    },
   });
   var subscriptionData = new Array();
 
-  for(index of subscriptions) {
+  for (index of subscriptions) {
     subscriptionData.push({
       label: index.service_name,
-      price: index.price
+      price: index.price,
     });
   }
   // This requires a json made from the subscription model that fetches the name and price of each one
   return res.json({
-    data: subscriptionData
+    data: subscriptionData,
   });
 });
 
