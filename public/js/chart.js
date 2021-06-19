@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return res.json();
     }).then(function(data) {
         var ourDatabase = {
-            labels: ['subscription 0'],
+            labels: [],
             datasets: [{
                 label: "Monthly Spending",
-                data: [10],
-                backgroundColor: ['#3333ff'],
+                data: [],
+                backgroundColor: [],
                 hoverOffset: 20
             }]
         };
