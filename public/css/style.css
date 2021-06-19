@@ -27,3 +27,18 @@ header,
 #calendar {
   color: rgb(103, 103, 103);
 }
+
+.jumbotron {
+  background-color: #ffd966;
+}
+
+#main-title {
+  color: #007fe0;
+  font-size: 70px;
+}
+
+.lead {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+

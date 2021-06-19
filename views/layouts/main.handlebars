@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
     {{!-- <link href="fullcalendar/main.css" rel="stylesheet" />
     <script src="fullcalendar/main.js"></script> --}}
     <link rel="stylesheet" href="/css/jass.css">
@@ -16,33 +18,41 @@
 </head>
 
 <body>
-    <div class="flex-column justify-space-around">
-        <header>
-            <h1 class="col-auto header-tags">
-                <a href="/" style="color: #9a662e; text-decoration: none;">SWOSAAT</a>
-            </h1>
-            <nav class="nav-bar">
-                {{#if logged_in}}
-                <a style="color: #9a662e; text-decoration: none;" href="/profile">Profile</a> |
-                <button class="no-button" id="logout">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main class="container container-fluid mt-5">
-            {{{ body }}}
-        </main>
+  {{!-- Jumbotron --}}
+  <header>
+    <div class="jumbotron">
+      <h1 class="col-auto header-tags" id="main-title">
+        <a href="/">SWOSAAT</a></h1>
+        <hr class="my-4">
+      <p class="lead">Saving the World One Subscription at a Time</p>
+
     </div>
+   </header>
+
+  {{!-- Navbar section --}}
+  <nav class="nav-bar">
+    {{#if logged_in}}
+      <a class="profile-button" href="/profile">Profile</a> |
+      <button class="no-button" id="logout">Logout</button>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+ 
+  <main class="container container-fluid mt-5">
+      {{{ body }}}
+  </main>
+  
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
 
     {{/if}}
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
-<script src="/js/calendar.js"></script>
-<script src="/js/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+  <script src="/js/calendar.js"></script>
+  <script src="/js/chart.js"></script>
 
 </body>
 
