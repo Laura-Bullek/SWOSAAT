@@ -32,7 +32,7 @@ const newFormHandler = async (event) => {
     trial_duration = null;
   }
 
-  if (service_name && price &&) {
+  if (service_name && price) {
     const response = await fetch(`/api/subscriptions`, {
       method: 'POST',
       body: JSON.stringify({ service_name, price, pay_date, pay_period, trial, trial_duration }),

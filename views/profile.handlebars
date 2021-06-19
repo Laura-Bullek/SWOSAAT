@@ -40,15 +40,17 @@
         <button type="submit" class="btn btn-primary add">Add</button>
       </div>
     </form>
+  </div>
 
     {{#if subscriptions.length}}
     <div class="col-md-6 subscription-list">
-      <h3>Current Projects:</h3>
+      <h3>Subscriptions:</h3>
 
       {{#each subscriptions as |subscription|}}
       <div class="row mb-2">
         <div class="col-md-8">
-          <h4><a href="/project/{{subscription.id}}">{{subscription.name}}</a></h4>
+          <h4>{{subscription.service_name}}</h4>
+          <p>{{subscription.price}}</p>
         </div>
         <div class="col-md-4">
           <button class="btn btn-sm btn-danger" data-id="{{subscription.id}}">DELETE</button>
