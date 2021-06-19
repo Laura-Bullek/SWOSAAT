@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll();
     const users = userData.map((user) => user.get({ plain: true }));
-    res.render("homepage", {
+    res.render("login", {
       users,
       logged_in: req.session.logged_in,
     });
@@ -65,27 +65,48 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/events", (req, res) => {
-  // Use subscription model to get data from database
+// router.get("/events", (req, res) => {
+//   // Use subscription model to get data from database
 
-  // give data back as response so calanedar.js can fill up the events
+//   // give data back as response so calanedar.js can fill up the events
+//   return res.json({
+//     events: [
+//       {
+//         title: "event1",
+//         start: "2021-06-21",
+//       },
+//       {
+//         title: "event2",
+//         start: "2021-06-05",
+//         end: "2021-06-20",
+//       },
+//       {
+//         title: "event3",
+//         start: "2021-06-23T12:30:00",
+//         allDay: false, // will make the time show
+//       },
+//     ],
+//   });
+// });
+
+router.get("/prices", async (req, res) => {
+  // Use subscription model to get data from database
+  const subscriptions = await Subscription.findAll({
+    where: {
+      user_id:req.session.user_id
+    }
+  });
+  var subscriptionData = new Array();
+
+  for(index of subscriptions) {
+    subscriptionData.push({
+      label: index.service_name,
+      price: index.price
+    });
+  }
+  // This requires a json made from the subscription model that fetches the name and price of each one
   return res.json({
-    events: [
-      {
-        title: "event1",
-        start: "2021-06-21",
-      },
-      {
-        title: "event2",
-        start: "2021-06-05",
-        end: "2021-06-20",
-      },
-      {
-        title: "event3",
-        start: "2021-06-23T12:30:00",
-        allDay: false, // will make the time show
-      },
-    ],
+    data: subscriptionData
   });
 });
 
