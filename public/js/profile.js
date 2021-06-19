@@ -17,6 +17,7 @@ const newFormHandler = async (event) => {
   const service_name = document.querySelector('#sub-name').value.trim();
   const price = document.querySelector('#sub-price').value.trim();
   const pay_date = document.querySelector('#pay-date').value;
+  const pay_period = document.querySelector('#pay-period').value;
 
   let trialCheckBox = document.querySelector('#trial-check');
 
@@ -34,7 +35,7 @@ const newFormHandler = async (event) => {
   if (service_name && price && pay_date) {
     const response = await fetch(`/api/subscriptions`, {
       method: 'POST',
-      body: JSON.stringify({ service_name, price, pay_date, trial, trial_duration }),
+      body: JSON.stringify({ service_name, price, pay_date, pay_period, trial, trial_duration }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -46,29 +47,29 @@ const newFormHandler = async (event) => {
       alert('Failed to Enter Subscription');
     }
   }
-  console.log(service_name, price, pay_date, trial, trial_duration);
+  console.log(service_name, price, pay_date, pay_period, trial, trial_duration);
 };
 
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
-//     const response = await fetch(`/api/projects/${id}`, {
-//       method: 'DELETE',
-//     });
+    const response = await fetch(`/api/subscriptions/${id}`, {
+      method: 'DELETE',
+    });
 
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to delete project');
-//     }
-//   }
-// };
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete subscription');
+    }
+  }
+};
 
 document
   .querySelector('.new-sub-form')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.project-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.subscription-list')
+  .addEventListener('click', delButtonHandler);
