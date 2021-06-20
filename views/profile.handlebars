@@ -42,7 +42,6 @@
     </form>
   </div>
 
-<<<<<<< HEAD
     {{#if subscriptions.length}}
     <div class="col-md-6 subscription-list">
       <h3>Subscriptions:</h3>
@@ -63,36 +62,10 @@
   </div>
 
 <div id="calendar" style="height: 400px; width: 700px"></div>
-=======
-  {{#if subscriptions.length}}
-  <div class="col-md-6 subscription-list">
-    <h3>Subcriptions:</h3>
-
-    {{#each subscriptions as |subscription|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{subscription.service_name}}</h4>
-        <p>${{subscription.price}}</p>
-      </div>
-      <div class="col-md-4">
-        <button class="delete-button btn btn-sm btn-danger" data-id="{{subscription.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
->>>>>>> abb2a2c (add a few merges from main)
 <canvas id="pieChart" height = "400" width = "700">Fallback Text</canvas>
 
-<<<<<<< HEAD
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-<<<<<<< HEAD
-=======
-{{!-- <script src="/js/calendar.js"></script> --}}
-=======
->>>>>>> 6805c07 (add a few merges from main)
->>>>>>> abb2a2c (add a few merges from main)
+
 <script src="/js/chart.js"></script>
 <script src="./js/profile.js"></script>
