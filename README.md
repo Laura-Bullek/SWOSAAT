@@ -1,25 +1,58 @@
-# Subscription-Tracker
+# SWOSAAT
 
 ## Description
-The **Subscription-Tracker** is a full-stack application designed 
+**SWOSAAT** is an interactive real-world full-stack application designed to use everything we've learned in the past six units. This is the second project of the March 2021 cohort from University of New Hampshire's full-stack coding bootcamp. 
 
-Our task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. This also comes with a unit test for each part.
-
-There is a walkthrough video below that demonstrates its functionality and all of the tests passing.
+SWOOSAT is a full-stack application designed to track recurring online subscription spending using analytics to track those expenses. 
 
 Technologies are listed below.  
 
 ## User Story
  - AS AN online consumer
  - I WANT an application to track my online and mobile subscriptions
- - SO THAT I have analytic data of my monthly subsriptions spending and reminders of new and existing subscriptions.
+ - SO THAT I have analytic data of my monthly subsriptions expenses.
 
-## Acceptance Criteria
-```
-```
+## Project Requirements
+
+* Use Node.js and Express.js to create a RESTful API.
+
+* Use Handlebars.js as the template engine.
+
+* Use MySQL and the Sequelize ORM for the database.
+
+* Have both GET and POST routes for retrieving and adding new data.
+
+* Use at least one new library, package, or technology that we haven’t discussed.
+
+* Have a folder structure that meets the MVC paradigm.
+
+* Include authentication (express-session and cookies).
+
+* Protect API keys and sensitive information with environment variables.
+
+* Be deployed using Heroku (with data).
+
+* Have a polished UI.
+
+* Be responsive.
+
+* Be interactive (i.e., accept and respond to user input).
+
+* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Technologies
-
+- HTML/CSS
+- Bootstrap.css
+- JavaScript
+- Handlebars.js
+- Node.js
+- Express.js
+- Heroku
+- MySQL Database
+- Sequelize ORM
+- Cart.js API
 
 ## Credits 
 This application was created exclusively by:
