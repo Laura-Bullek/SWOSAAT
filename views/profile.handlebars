@@ -18,8 +18,15 @@
         <input class="form-input" type="number" step="0.01" min="0" id="sub-price" name="sub-price" />
       </div>
       <div class="form-group">
-        <label for="pay-date">Payment date:</label>
+        <label for="pay-date">Next payment date:</label>
         <input class="form-input" type="date" id="pay-date" name="pay-date"/>
+      </div>
+      <div class="form-group">
+        <label for="pay-period">Payment period:</label>
+        <select class="form-input" id="pay-period" name="pay-period">
+          <option value="yearly">Yearly</option>
+          <option value="monthly">Monthly</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="trial-check">is this a trial?</label>
@@ -35,14 +42,32 @@
     </form>
   </div>
 
+    {{#if subscriptions.length}}
+    <div class="col-md-6 subscription-list">
+      <h3>Subscriptions:</h3>
 
+      {{#each subscriptions as |subscription|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4>{{subscription.service_name}}</h4>
+          <p>{{subscription.price}}</p>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{subscription.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+
+<div id="calendar" style="height: 400px; width: 700px"></div>
 <canvas id="pieChart" height = "400" width = "700">Fallback Text</canvas>
 
 <div id="calendar" style="height: 400px; width: 700px; margin-top: 20px;"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
 
 <script src="/js/chart.js"></script>
 <script src="/js/calendar.js"></script>

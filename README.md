@@ -54,7 +54,6 @@ Technologies are listed below.
 - Sequelize ORM
 - Cart.js API
 
-
 ## Credits 
 This application was created exclusively by:
 - Brendan Kurylo [GitHub](https://github.com/Bkrendan12)
