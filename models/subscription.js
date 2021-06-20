@@ -29,6 +29,10 @@ Subscription.init (
             type: DataTypes.DATE,
             allowNull: false,
         },
+        pay_period: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         trial: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

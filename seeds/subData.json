@@ -3,18 +3,21 @@
         "service_name": "Amazon Prime",
         "price": 13,
         "pay_date": "06/020/2021",
+        "pay_period": "monthly",
         "trial": false
     },
     {
         "service_name": "Twitch",
         "price": 3,
         "pay_date": "06/020/2021",
+        "pay_period": "monthly",
         "trial": false
     },
     {
         "service_name": "hulu",
         "price": 6,
         "pay_date": "06/020/2021",
+        "pay_period": "monthly",
         "trial": true,
         "trial_duration": 42
     },
@@ -22,12 +25,14 @@
         "service_name": "Netflix",
         "price": 14,
         "pay_date": "06/020/2021",
+        "pay_period": "monthly",
         "trial": false
     },
     {
         "service_name": "Disney Plus",
-        "price": 8,
+        "price": 96,
         "pay_date": "06/020/2021",
+        "pay_period": "yearly",
         "trial": false
     }
 ]
