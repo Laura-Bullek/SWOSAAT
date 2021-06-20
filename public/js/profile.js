@@ -47,13 +47,20 @@ const newFormHandler = async (event) => {
       alert('Failed to Enter Subscription');
     }
   }
+<<<<<<< HEAD
   console.log(service_name, price, pay_date, pay_period, trial, trial_duration);
+=======
+>>>>>>> abb2a2c (add a few merges from main)
 };
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
+<<<<<<< HEAD
 
+=======
+    console.log(id);
+>>>>>>> abb2a2c (add a few merges from main)
     const response = await fetch(`/api/subscriptions/${id}`, {
       method: 'DELETE',
     });
@@ -71,5 +78,9 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
+<<<<<<< HEAD
   .querySelector('.subscription-list')
+=======
+  .querySelector('.delete-button')
+>>>>>>> abb2a2c (add a few merges from main)
   .addEventListener('click', delButtonHandler);
