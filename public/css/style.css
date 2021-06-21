@@ -24,8 +24,9 @@ header,
   margin-left: -5px;
 }
 
-#calendar {
+#calendar .fc-today {
   color: rgb(103, 103, 103);
+  font-size: 20px !important;
 }
 
 .jumbotron {
@@ -43,6 +44,15 @@ header,
 }
 
 #pieChart {
-  margin: 80px;
-  padding: 50px;
+  margin-bottom: 45px !important;
+  padding: 100px !important;
+}
+
+.data-chart-calendar {
+  height: 80% !important;
+  width: 80% !important;
+}
+
+footer {
+  height: 35px;
 }

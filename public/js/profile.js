@@ -1,14 +1,3 @@
-const showTrialPeriod = async () => {
-  let trial = document.querySelector("#trial-check");
-  let durContainer = document.querySelector("#trial-period-div");
-
-  if (trial.checked === true) {
-    durContainer.style.display = "block";
-  } else {
-    durContainer.style.display = "none";
-  }
-};
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -16,19 +5,6 @@ const newFormHandler = async (event) => {
   const price = document.querySelector("#sub-price").value.trim();
   const pay_date = document.querySelector("#pay-date").value;
   const pay_period = document.querySelector("#pay-period").value;
-
-  let trialCheckBox = document.querySelector("#trial-check");
-
-  let trial;
-  let trial_duration;
-
-  if (trialCheckBox.checked === true) {
-    trial = true;
-    trial_duration = document.querySelector("#trial-period").value;
-  } else {
-    trial = false;
-    trial_duration = null;
-  }
 
   if (service_name && price) {
     const response = await fetch(`/api/subscriptions`, {
@@ -38,8 +14,6 @@ const newFormHandler = async (event) => {
         price,
         pay_date,
         pay_period,
-        trial,
-        trial_duration,
       }),
       headers: {
         "Content-Type": "application/json",

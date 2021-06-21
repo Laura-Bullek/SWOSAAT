@@ -29,14 +29,6 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="trial-check">is this a trial?</label>
-        <input class="form-input col-md-1" type="checkbox" id="trial-check" onclick="showTrialPeriod()"/>
-      </div>
-      <div class="form-group" id="trial-period-div" style="display:none">
-        <label for="trial-period">Trial duration:</label>
-        <input class="form-input" type="number" onclick="showTrialPeriod()" id="trial-period"/>
-      </div>
-      <div class="form-group">
         <button type="submit" class="btn btn-primary add">Add</button>
       </div>
     </form>
@@ -61,10 +53,11 @@
     {{/if}}
   </div>
 
+<div class="row data-chart-calendar">
+    <canvas id="pieChart" class="col">Fallback Text</canvas>
+    <div id="calendar" class="col" ></div>
 
-<canvas id="pieChart" height = "400" width = "700">Fallback Text</canvas>
-
-<div id="calendar" style="height: 400px; width: 700px; margin-top: 20px;"></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>

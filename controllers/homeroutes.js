@@ -15,10 +15,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/calendar", async (req, res) => {
-  res.render("calendar");
-});
-
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
