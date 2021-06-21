@@ -1,3 +1,11 @@
+body {
+  font-family: 'Fraunces', serif;
+  background-image: url(https://i.postimg.cc/hGDgPMJG/white-monochrome-background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -29,20 +37,44 @@ header,
 }
 
 .jumbotron {
-  background-color: #ffd966;
+  /* background-color: #ffd966; */
+  background: rgb(241,194,50);
+  background: radial-gradient(circle, rgba(241,194,50,1) 0%, rgba(0,127,224,1) 65%, rgba(0,105,182,1) 100%);
+  justify-content: center;
+  margin: 5px auto;
 }
 
 #main-title {
-  color: #007fe0;
+  color: #0069b6;
   font-size: 70px;
+  font-family: 'Fraunces', serif;
 }
 
 .lead {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Shadows Into Light', cursive;
   font-size: 30px;
+  color: #0069b6;
 }
 
 #pieChart {
   margin: 80px;
   padding: 50px;
 }
+
+#start-here {
+  background-color: #0069b6;
+}
+
+#login-btn,
+#logout,
+#my-profile {
+  color: #434343;
+}
+
+#login,
+#sign-in {
+  background-color: #0069b6;
+}
+
+
+

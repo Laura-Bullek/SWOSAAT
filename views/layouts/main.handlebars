@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="fullcalendar/main.css" rel="stylesheet" />
     <script src="fullcalendar/main.js"></script>
     <link rel="stylesheet" href="/css/jass.css">
@@ -18,26 +18,35 @@
 </head>
 
 <body>
-  {{!-- Jumbotron --}}
-  <header>
-    <div class="jumbotron">
-      <h1 class="col-auto header-tags" id="main-title">
-        <a href="/">SWOSAAT</a></h1>
-        <hr class="my-4">
-      <p class="lead">Saving the World One Subscription at a Time</p>
-      
-    </div>
+   {{!-- Navbar section --}}
+   <nav class="navbar navbar-expand-lg" id="navbar">
+     <div class="container-fluid">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+           {{#if logged_in}}
+           <a class="nav-link active" class="profile-button" id="my-profile" aria-current="page" href="/profile">My Profile</a>
+           {{!-- Where does this button lead to? LB --}}
+           <button class="no-button" id="logout">Log Out</button>
+           {{else}}
+           <a class="nav-link active" id="login-btn" href="/login">Login</a>
+           {{/if}}
+         </div>
+       </div>
+     </div>
+   </nav>  
+ 
+   {{!-- Jumbotron --}}
+   <header>
+     <div class="jumbotron text-center">
+       <h1 class="col-auto header-tags" id="main-title">SWOSAAT</h1>
+       <p class="lead">Saving the World One Subscription at a Time</p>
+       <hr class="my-4">
+       <a class="btn btn-primary btn-lg border-white" id="start-here" href="#" role="button">Start Here</a>
+     </div>
    </header>
-
-  {{!-- Navbar section --}}
-  <nav class="nav-bar">
-    {{#if logged_in}}
-      <a class="profile-button" href="/profile">Profile</a> |
-      <button class="no-button" id="logout">Logout</button>
-    {{else}}
-      <a href="/login">Login</a>
-    {{/if}}
-  </nav>
  
   <main class="container container-fluid mt-5">
       {{{ body }}}
@@ -51,8 +60,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
-
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <script src="/js/chart.js"></script>
   <script src="/js/calendar.js"></script>
 
