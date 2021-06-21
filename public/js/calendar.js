@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   var calendarEl = document.getElementById("calendar");
-  var service_name = document.querySelector("#sub-name").value.trim();
-  var price = document.querySelector("#sub-price").value.trim();
-  var pay_date = document.querySelector("#pay-date").value;
 
   fetch("/events", {
     method: "GET",
@@ -15,11 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(data);
       var calendar = new FullCalendar.Calendar(
         calendarEl,
-        service_name,
-        price,
-        pay_date,
+
         {
-          events: data.events,
+          events: data.data,
           timeZone: "local",
           timeFormat: "hh:mm a",
           selectable: true,
@@ -29,8 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             center: "title",
             right: "dayGridMonth,timeGridWeek,timeGridDay",
           },
-          editable: true,
-          droppable: true,
+
           dateClick: function (info) {
             alert("clicked " + info.dateStr);
           },

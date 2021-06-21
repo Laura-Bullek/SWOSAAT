@@ -77,9 +77,8 @@ router.get("/events", async (req, res) => {
 
   for (index of subscriptions) {
     subscriptionData.push({
-      label: index.service_name,
-      price: index.price,
-      subscription_date: index.pay_date,
+      title: index.service_name,
+      start: index.pay_date,
     });
   }
 
