@@ -23,6 +23,17 @@ router.get("/profile", withAuth, async (req, res) => {
       include: [{ model: Subscription }],
     });
     const user = userData.get({ plain: true });
+    user.subscriptions = user.subscriptions.map((subscription) => {
+      console.log(typeof subscription.pay_date);
+      return {
+        ...subscription,
+        pay_date: subscription.pay_date
+          .toString()
+          .split(" ")
+          .splice(0, 4)
+          .join(" "),
+      };
+    });
     res.render("profile", {
       ...user,
       logged_in: true,
@@ -83,5 +94,12 @@ router.get("/events", async (req, res) => {
     data: subscriptionData,
   });
 });
+
+// {
+//   title: subscriptionData.service_name
+
+//   start: subscriptionData.pay_date,
+//   end:
+// },
 
 module.exports = router;
