@@ -18,23 +18,15 @@
         <input class="form-input" type="number" step="0.01" min="0" id="sub-price" name="sub-price" />
       </div>
       <div class="form-group">
-        <label for="pay-date">Next payment date:</label>
+        <label for="pay-date">Start date:</label>
         <input class="form-input" type="date" id="pay-date" name="pay-date"/>
       </div>
       <div class="form-group">
         <label for="pay-period">Payment period:</label>
         <select class="form-input" id="pay-period" name="pay-period">
-          <option value="yearly">Yearly</option>
-          <option value="monthly">Monthly</option>
+          <option class='yearly' value="yearly">Yearly</option>
+          <option class='monthly' value="monthly">Monthly</option>
         </select>
-      </div>
-      <div class="form-group">
-        <label for="trial-check">Is this a trial?</label>
-        <input class="form-input col-md-1" type="checkbox" id="trial-check" onclick="showTrialPeriod()"/>
-      </div>
-      <div class="form-group" id="trial-period-div" style="display:none">
-        <label for="trial-period">Trial duration:</label>
-        <input class="form-input" type="number" onclick="showTrialPeriod()" id="trial-period"/>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary add">Add</button>
@@ -50,7 +42,7 @@
       <div class="row mb-2">
         <div class="col-md-8">
           <h4>{{subscription.service_name}}</h4>
-          <p>{{subscription.price}}</p>
+          <p>{{subscription.price}} {{subscription.pay_period}} Started on {{subscription.pay_date}}</p>
         </div>
         <div class="col-md-4">
           <button class="btn btn-sm btn-danger" data-id="{{subscription.id}}">DELETE</button>
@@ -61,10 +53,10 @@
     {{/if}}
   </div>
 
-
-<canvas id="pieChart" height = "400" width = "700">Fallback Text</canvas>
-
-<div id="calendar" style="height: 400px; width: 700px; margin-top: 20px;"></div>
+<div class="col data-chart-calendar">
+    <canvas id="pieChart" class="row">Fallback Text</canvas>
+    <div id="calendar" class="col-auto" ></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>

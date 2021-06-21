@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Monthly Spending",
             data: [],
             backgroundColor: [],
-            hoverOffset: 20,
+            hoverOffset: -20,
           },
         ],
       };
@@ -35,7 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
       var myChart = new Chart(context, {
         type: "doughnut",
         data: ourDatabase,
+        title: {
+          display: true,
+          text: "Reported Fault Allocation",
+          color: "#D6001C",
+          font: {
+            family: "AvenirNextLTW01-Regular",
+            size: 16,
+            style: "normal",
+          },
+        },
         options: {
+          tooltips: {
+            bodyFontSize: 20,
+          },
           plugins: {
             datalabels: {
               display: true,
