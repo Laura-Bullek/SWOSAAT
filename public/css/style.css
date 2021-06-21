@@ -38,7 +38,11 @@ header,
 }
 
 .lead {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-size: 30px;
 }
 
+#pieChart {
+  margin: 80px;
+  padding: 50px;
+}

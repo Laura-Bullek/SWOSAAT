@@ -48,20 +48,43 @@ router.get("/prices", async (req, res) => {
   // Use subscription model to get data from database
   const subscriptions = await Subscription.findAll({
     where: {
-      user_id:req.session.user_id
-    }
+      user_id: req.session.user_id,
+    },
   });
   var subscriptionData = new Array();
 
-  for(index of subscriptions) {
+  for (index of subscriptions) {
     subscriptionData.push({
       label: index.service_name,
-      price: index.price
+      price: index.price,
     });
   }
   // This requires a json made from the subscription model that fetches the name and price of each one
   return res.json({
-    data: subscriptionData
+    data: subscriptionData,
+  });
+});
+
+router.get("/events", async (req, res) => {
+  // Use subscription model to get data from database
+  const subscriptions = await Subscription.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+  });
+
+  var subscriptionData = new Array();
+
+  for (index of subscriptions) {
+    subscriptionData.push({
+      title: index.service_name,
+      start: index.pay_date,
+    });
+  }
+
+  // give data back as response so calanedar.js can fill up the events
+  return res.json({
+    data: subscriptionData,
   });
 });
 
