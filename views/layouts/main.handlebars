@@ -23,13 +23,8 @@
    {{!-- Navbar section --}}
    <nav class="navbar navbar-expand-lg" id="navbar">
      <div class="container-fluid">
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
          <div class="navbar-nav">
            {{#if logged_in}}
-           <a class="nav-link active" class="profile-button" id="my-profile" aria-current="page" href="/profile">My Profile</a>
            {{!-- Where does this button lead to? LB --}}
            <button class="no-button" id="logout">Log Out</button>
            {{else}}
@@ -44,9 +39,8 @@
    <header>
      <div class="jumbotron text-center">
        <h1 class="col-auto header-tags" id="main-title">SWOSAAT</h1>
-       <p class="lead">Saving the World One Subscription at a Time</p>
        <hr class="my-4">
-       <a class="btn btn-primary btn-lg border-white" id="start-here" href="#" role="button">Start Here</a>
+       <p class="lead">Saving the World One Subscription at a Time</p>
      </div>
    </header>
  
