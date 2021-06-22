@@ -52,23 +52,41 @@ router.get("/login", (req, res) => {
 
 router.get("/prices", async (req, res) => {
   // Use subscription model to get data from database
-  const subscriptions = await Subscription.findAll({
+  let mSubscriptions = await Subscription.findAll({
     where: {
       user_id: req.session.user_id,
       pay_period: "monthly",
     },
   });
-  var subscriptionData = new Array();
 
-  for (index of subscriptions) {
-    subscriptionData.push({
+  let ySubscriptions = await Subscription.findAll({
+    where: {
+      user_id: req.session.user_id,
+      pay_period: "yearly",
+    },
+  });
+
+  var monthlySubscriptionData = new Array();
+  var yearlySubscriptionData = new Array();
+
+  for (index of mSubscriptions) {
+    monthlySubscriptionData.push({
       label: index.service_name,
       price: index.price,
     });
   }
+
+  for (index2 of ySubscriptions) {
+    yearlySubscriptionData.push({
+      label: index2.service_name,
+      price: index2.price,
+    });
+  }
+
   // This requires a json made from the subscription model that fetches the name and price of each one
   return res.json({
-    data: subscriptionData,
+    monthly: monthlySubscriptionData,
+    yearly: yearlySubscriptionData
   });
 });
 
@@ -94,13 +112,6 @@ router.get("/events", async (req, res) => {
     data: subscriptionData,
   });
 });
-
-// {
-//   title: subscriptionData.service_name
-
-//   start: subscriptionData.pay_date,
-//   end:
-// },
 
 module.exports = router;
 
