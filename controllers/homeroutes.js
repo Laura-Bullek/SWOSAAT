@@ -55,6 +55,7 @@ router.get("/prices", async (req, res) => {
   const subscriptions = await Subscription.findAll({
     where: {
       user_id: req.session.user_id,
+      pay_period: "monthly",
     },
   });
   var subscriptionData = new Array();
