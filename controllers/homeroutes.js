@@ -103,3 +103,8 @@ router.get("/events", async (req, res) => {
 // },
 
 module.exports = router;
+
+
+let a = 1;
+
+a = a;
