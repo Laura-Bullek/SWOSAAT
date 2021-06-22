@@ -1,8 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-// const sequelize = require("../config/connection");
-const Sequelize = require('sequelize');
-require('dotenv').config();
-let sequelize
+const sequelize = require("../config/connection");
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
