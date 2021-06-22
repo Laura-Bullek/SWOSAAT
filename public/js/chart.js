@@ -46,17 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         },
         options: {
-          tooltips: {
-            bodyFontSize: 20,
-          },
-          plugins: {
-            datalabels: {
-              display: true,
-              formatter: (val, context) => {
-                return context.chart.data.labels[context.dataIndex];
-              },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Monthly Spending'
+                }
             },
-          },
         },
       });
     });
