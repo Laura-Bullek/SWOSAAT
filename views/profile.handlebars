@@ -53,14 +53,18 @@
     {{/if}}
   </div>
 
-<div class="col data-chart-calendar">
-    <canvas id="pieChart" class="row">Fallback Text</canvas>
-    <div id="calendar" class="col-auto" ></div>
+<div class="row data-chart-calendar">
+      <div class="col-12 col-lg-6">
+        <canvas id="pieChart">Fallback Text</canvas>
+      </div>      
+      <div class="col-12 col-lg-6">
+        <div id="calendar"></div>
+      </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
 <script src="/js/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
 <script src="/js/calendar.js"></script>
 <script src="./js/profile.js"></script>
