@@ -38,20 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
       };
 
+      var monthlySpending = 0;
+      var yearlySpending = 0;
+
       for (let i = 0; i < data.monthly.length; ++i) {
         monthlyDatabase.labels.push(data.monthly[i].label);
         monthlyDatabase.datasets[0].data.push(data.monthly[i].price);
         monthlyDatabase.datasets[0].backgroundColor.push(colors[Math.floor(Math.random() * colors.length)]);
+        monthlySpending += parseFloat(data.monthly[i].price);
         
         yearlyDatabase.labels.push(data.monthly[i].label);
         yearlyDatabase.datasets[0].data.push((data.monthly[i].price) * 12);
         yearlyDatabase.datasets[0].backgroundColor.push(colors[Math.floor(Math.random() * colors.length)]);
+        yearlySpending += (parseFloat(data.monthly[i].price) * 12);
       }
 
       for (let n = 0; n < data.yearly.length; ++n) {
         yearlyDatabase.labels.push(data.yearly[n].label);
         yearlyDatabase.datasets[0].data.push(data.yearly[n].price);
         yearlyDatabase.datasets[0].backgroundColor.push(colors[Math.floor(Math.random() * colors.length)]);
+        yearlySpending += parseFloat(data.yearly[n].price);
       }
 
       var myChart = new Chart(context, {
@@ -71,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Monthly Spending'
+                    text: 'Monthly Spending: $' + monthlySpending.toFixed(2)
                 }
             },
         },
@@ -94,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Yearly Spending'
+                    text: 'Yearly Spending: $' + yearlySpending.toFixed(2)
                 }
             },
         },
