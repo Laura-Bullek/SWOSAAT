@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return res.json();
     })
     .then(function (data) {
-      console.log(data);
       var calendar = new FullCalendar.Calendar(calendarEl, {
         events: data.data,
         eventColor: "orange",

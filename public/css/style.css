@@ -59,12 +59,7 @@ header,
 
 #pieChart {
   margin-bottom: 45px !important;
-  padding: 100px !important;
-}
-
-.data-chart-calendar {
-  height: 50% !important;
-  width: 80% !important;
+  padding: 20px!important;
 }
 
 footer {
@@ -85,6 +80,5 @@ footer {
 #sign-in {
   background-color: #0069b6;
 }
-
 
 

@@ -24,7 +24,6 @@ router.get("/profile", withAuth, async (req, res) => {
     });
     const user = userData.get({ plain: true });
     user.subscriptions = user.subscriptions.map((subscription) => {
-      console.log(typeof subscription.pay_date);
       return {
         ...subscription,
         pay_date: subscription.pay_date
