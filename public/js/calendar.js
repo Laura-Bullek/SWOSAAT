@@ -20,10 +20,3 @@ document.addEventListener("DOMContentLoaded", function () {
       calendar.render();
     });
 });
-
-// {
-//   title: subscriptionData.service_name
-
-//   start: subscriptionData.pay_date,
-//   end:
-// },
