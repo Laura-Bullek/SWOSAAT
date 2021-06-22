@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Monthly Spending",
             data: [],
             backgroundColor: [],
-            hoverOffset: -20,
+            hoverOffset: 20,
           },
         ],
       };
